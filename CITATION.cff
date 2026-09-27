@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Compound rainfall and soil-moisture drivers of landslides in Nepal"
+version: 0.1.0
+date-released: 2026-10-08
+authors:
+  - family-names: Samal
+    given-names: Milan
+license: MIT

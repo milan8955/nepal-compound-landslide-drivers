@@ -1,0 +1,67 @@
+period:
+  start: '2011-01-01'
+  end: '2025-12-31'
+  season_months:
+  - 6
+  - 7
+  - 8
+  - 9
+split:
+  train_years:
+  - 2011
+  - 2012
+  - 2013
+  - 2014
+  - 2015
+  - 2016
+  - 2017
+  - 2018
+  - 2019
+  - 2020
+  test_years:
+  - 2021
+  - 2022
+  - 2023
+  - 2024
+  - 2025
+units:
+  level: district
+  boundaries_file: data/raw/npl_adm2.geojson
+  name_field: adm2_name
+forcing:
+  precip_primary: imerg
+  precip_windows_days:
+  - 1
+  - 3
+  - 7
+  sm_variable: sm_rz
+  sm_lag_days: 1
+analysis:
+  primary_pair:
+  - P3
+  - SM
+  exceedance_quantile: 0.9
+  copula_families:
+  - gaussian
+  - student
+  - clayton
+  - gumbel
+  - frank
+  - joe
+  bootstrap_n: 200
+  random_seed: 42
+sources:
+  bipad_api: https://bipadportal.gov.np/api/v1
+  bipad_hazard_ids:
+    landslide: 17
+    flood: 11
+    heavy_rainfall: 14
+    glof: 26
+    avalanche: 3
+  coolr_layers:
+  - https://gis.earthdata.nasa.gov/portal/rest/services/Landslides/COOLR_Reports_Points/FeatureServer/0
+  - https://gis.earthdata.nasa.gov/portal/rest/services/Landslides/COOLR_Reports_Points/MapServer/0
+  - https://gis.earthdata.nasa.gov/portal/rest/services/Landslides/COOLR_Events_Points/FeatureServer/0
+  boundaries:
+    url: https://data.humdata.org/dataset/07db728a-4f0f-4e98-8eb0-8fa9df61f01c/resource/dea34e50-37d5-4e36-98ae-2b7b1b4c43de/download/npl_admin_boundaries.geojson.zip
+    member: npl_admin2.geojson

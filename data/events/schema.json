@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Nepal cascade event",
+  "type": "object",
+  "required": ["event_id", "name", "date_start", "primary_trigger", "rainfall_triggered",
+               "hazard_chain", "key_sources", "verification_status"],
+  "properties": {
+    "event_id": {"type": "string", "pattern": "^NPL-[0-9]{4}-[A-Z]+$"},
+    "name": {"type": "string"},
+    "date_start": {"type": "string", "format": "date", "description": "Nepal local date of the first hazard"},
+    "districts": {"type": "string", "description": "semicolon-separated district names"},
+    "rivers": {"type": "string", "description": "semicolon-separated, upstream to downstream"},
+    "primary_trigger": {"type": "string"},
+    "rainfall_triggered": {"enum": ["yes", "partly", "no"]},
+    "hazard_chain": {"type": "string", "description": "steps separated by ' > '"},
+    "dam_type": {"type": "string"},
+    "fatalities": {"type": "string", "description": "number, range, or 'to verify'"},
+    "fatalities_status": {"enum": ["official", "reported (check official figure)", "provisional", "unverified"]},
+    "key_sources": {"type": "string"},
+    "verification_status": {"enum": ["verified", "partly verified", "needs verification", "provisional"]},
+    "notes": {"type": "string"}
+  }
+}

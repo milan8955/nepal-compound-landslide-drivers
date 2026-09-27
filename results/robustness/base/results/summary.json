@@ -1,0 +1,287 @@
+{
+  "n_unit_days": 140910,
+  "n_units": 77,
+  "n_landslide_days": 3226,
+  "base_rate": 0.02289,
+  "precip_source": "P_imerg",
+  "label_source": "bipad",
+  "variables": [
+    "P3",
+    "SM"
+  ],
+  "landslide_days_per_year": {
+    "2011": 104,
+    "2012": 67,
+    "2013": 80,
+    "2014": 54,
+    "2015": 49,
+    "2016": 155,
+    "2017": 121,
+    "2018": 236,
+    "2019": 284,
+    "2020": 367,
+    "2021": 204,
+    "2022": 207,
+    "2023": 361,
+    "2024": 560,
+    "2025": 377
+  },
+  "gpd_example": {
+    "unit": "Taplejung",
+    "threshold": 59.61305,
+    "shape": -0.22724,
+    "scale": 21.70975,
+    "n_exc": 122,
+    "zeta": 0.1,
+    "return_levels_mm": {
+      "2": 108.9,
+      "5": 117.6,
+      "10": 123.1,
+      "25": 129.1,
+      "50": 132.9
+    }
+  },
+  "copula_all_days": {
+    "table": [
+      {
+        "family": "gaussian",
+        "rotation": 0,
+        "params": [
+          0.4406
+        ],
+        "tau": 0.2905,
+        "aic": -19947.0347,
+        "loglik": 9974.51735
+      },
+      {
+        "family": "student",
+        "rotation": 0,
+        "params": [
+          0.4401,
+          49.9941
+        ],
+        "tau": 0.29011,
+        "aic": -19876.64886,
+        "loglik": 9940.32443
+      },
+      {
+        "family": "frank",
+        "rotation": 0,
+        "params": [
+          2.7765
+        ],
+        "tau": 0.28744,
+        "aic": -18307.11933,
+        "loglik": 9154.55967
+      },
+      {
+        "family": "gumbel",
+        "rotation": 0,
+        "params": [
+          1.354
+        ],
+        "tau": 0.26142,
+        "aic": -17802.50242,
+        "loglik": 8902.25121
+      },
+      {
+        "family": "clayton",
+        "rotation": 180,
+        "params": [
+          0.5765
+        ],
+        "tau": 0.22374,
+        "aic": -15593.77683,
+        "loglik": 7797.88841
+      },
+      {
+        "family": "joe",
+        "rotation": 0,
+        "params": [
+          1.4539
+        ],
+        "tau": 0.20352,
+        "aic": -13618.54879,
+        "loglik": 6810.27439
+      }
+    ],
+    "best": "gaussian",
+    "gof": {
+      "cvm": 0.03449,
+      "p_value": 0.0495,
+      "n_used": 1500,
+      "n_boot": 100
+    },
+    "kendall_tau_empirical": 0.2906
+  },
+  "copula_landslide_days": {
+    "n": 1517,
+    "best": "gaussian",
+    "table": [
+      {
+        "family": "gaussian",
+        "rotation": 0,
+        "params": [
+          0.3762
+        ],
+        "tau": 0.24557,
+        "aic": -225.06711,
+        "loglik": 113.53356
+      },
+      {
+        "family": "student",
+        "rotation": 0,
+        "params": [
+          0.3725,
+          32.632
+        ],
+        "tau": 0.24298,
+        "aic": -223.91187,
+        "loglik": 113.95594
+      },
+      {
+        "family": "gumbel",
+        "rotation": 0,
+        "params": [
+          1.2777
+        ],
+        "tau": 0.21732,
+        "aic": -201.16309,
+        "loglik": 101.58155
+      },
+      {
+        "family": "clayton",
+        "rotation": 0,
+        "params": [
+          0.4545
+        ],
+        "tau": 0.18519,
+        "aic": -181.13579,
+        "loglik": 91.5679
+      },
+      {
+        "family": "frank",
+        "rotation": 0,
+        "params": [
+          2.1276
+        ],
+        "tau": 0.22645,
+        "aic": -172.81924,
+        "loglik": 87.40962
+      },
+      {
+        "family": "joe",
+        "rotation": 180,
+        "params": [
+          1.342
+        ],
+        "tau": 0.16226,
+        "aic": -155.86211,
+        "loglik": 78.93105
+      }
+    ]
+  },
+  "conditional_probability": {
+    "base_rate": 0.01615,
+    "P_given_U>0.9": 0.05621,
+    "P_given_U>0.9_V>0.9": 0.06992,
+    "P_given_U>0.9_V<=0.5": 0.03912,
+    "P_given_U>0.95_V>0.95": 0.0852
+  },
+  "return_periods_median_years": {
+    "T_and": 0.09185,
+    "T_or": 0.01631,
+    "T_kendall": 0.03229,
+    "T_u": 0.03975,
+    "T_v": 0.02476
+  },
+  "skill_test_years": {
+    "Dahal–Hasegawa ID": {
+      "TP": 198,
+      "FP": 1076,
+      "FN": 1511,
+      "TN": 44185,
+      "hit_rate": 0.11586,
+      "false_alarm_rate": 0.02377,
+      "false_alarm_ratio": 0.84458,
+      "TSS": 0.09208,
+      "alarm_share": 0.02712,
+      "TSS_90ci": [
+        0.01718,
+        0.15014
+      ]
+    },
+    "P3 ≥ q0.67": {
+      "TP": 1108,
+      "FP": 15166,
+      "FN": 601,
+      "TN": 30095,
+      "hit_rate": 0.64833,
+      "false_alarm_rate": 0.33508,
+      "false_alarm_ratio": 0.93192,
+      "TSS": 0.31325,
+      "alarm_share": 0.34648,
+      "TSS_90ci": [
+        0.26968,
+        0.3456
+      ]
+    },
+    "P3 ≥ q0.67 & SM ≥ q0.00": {
+      "TP": 1108,
+      "FP": 15166,
+      "FN": 601,
+      "TN": 30095,
+      "hit_rate": 0.64833,
+      "false_alarm_rate": 0.33508,
+      "false_alarm_ratio": 0.93192,
+      "TSS": 0.31325,
+      "alarm_share": 0.34648,
+      "TSS_90ci": [
+        0.26864,
+        0.3461
+      ]
+    },
+    "Logistic (rain+soil), same alarm rate": {
+      "TP": 1078,
+      "FP": 15061,
+      "FN": 631,
+      "TN": 30200,
+      "hit_rate": 0.63078,
+      "false_alarm_rate": 0.33276,
+      "false_alarm_ratio": 0.93321,
+      "TSS": 0.29802,
+      "alarm_share": 0.3436,
+      "TSS_90ci": [
+        0.24584,
+        0.34301
+      ]
+    }
+  },
+  "auc_test": {
+    "rain_only_logistic": 0.71607,
+    "rain_plus_soil_logistic": 0.71621,
+    "gain": 0.00013,
+    "gain_90ci": [
+      -0.00724,
+      0.00637
+    ]
+  },
+  "auc_test_within_year": {
+    "rain_only_logistic": 0.71504,
+    "rain_plus_soil_logistic": 0.71955,
+    "gain_by_year": {
+      "2021": 0.00144,
+      "2022": 0.00931,
+      "2023": -0.00273,
+      "2024": 0.00569,
+      "2025": 0.00883
+    }
+  },
+  "tuned_rules": {
+    "univariate_q": 0.67,
+    "bivariate_q": [
+      0.67,
+      0.0
+    ]
+  }
+}

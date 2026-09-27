@@ -1,0 +1,18 @@
+name: nepal-compound
+channels: [conda-forge]
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - scipy
+  - pyarrow
+  - pyyaml
+  - requests
+  - geopandas
+  - matplotlib
+  - scikit-learn
+  - earthengine-api
+  - pytest
+  - pip
+  - pip:
+      - pyvinecopulib>=0.7
